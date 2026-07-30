@@ -39,15 +39,22 @@ const NAV_MENU = [
     label: 'Information', 
     href: '/information',
     dropdown: [
+      { label: 'Fee Structure 2026-27', href: '/fee-structure' },
       { label: 'Code of Conduct', href: '/code-of-conduct' },
       { label: 'Examination & Evaluation Pattern', href: '/academics/examination-pattern' },
-      { label: 'Fee Structure & Rules', href: '/admission' },
       { label: 'Mandatory Disclosure', href: '/about/disclosure' },
     ]
   },
   { label: 'Mandatory Disclosure', href: '/about/disclosure' },
   { label: 'Infrastructure', href: '/infrastructure' },
-  { label: 'Activities/Gallery', href: '/activities' },
+  { 
+    label: 'Activities/Gallery', 
+    href: '/activities',
+    dropdown: [
+      { label: 'Annual Activity Calendar 2026-27', href: '/annual-activity' },
+      { label: 'Activities & Event Gallery', href: '/activities' },
+    ]
+  },
   { label: 'Downloads', href: '/downloads' },
   { label: 'Student TC', href: '/student-tc' },
   { label: 'Annual Function 2025', href: '/annual-function-2025', badge: '2025' },
