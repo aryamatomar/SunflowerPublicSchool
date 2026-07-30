@@ -1,32 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight, Home } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ChevronDown, ChevronRight, Home } from 'lucide-react';
 
-const NAV_ITEMS = [
-  { label: 'Home', href: '#home', active: true },
-  { label: 'About Sunflower', href: '#about' },
-  { label: 'From the desk', href: '#desk' },
-  { label: 'Mandatory Disclosure', href: '#disclosure' },
-  { label: 'Information', href: '#information' },
-  { label: 'Infrastructure', href: '#infrastructure' },
-  { label: 'Activities/Gallery', href: '#gallery' },
-  { label: 'Downloads', href: '#downloads' },
-  { label: 'Student TC', href: '#tc' },
-  { label: 'Annual Function 2025', href: '#annual-function', badge: '2025' },
-  { label: 'Contact', href: '#contact' },
+const NAV_MENU = [
+  { label: 'Home', href: '/' },
+  { 
+    label: 'About Sunflower', 
+    href: '/about/journey',
+    dropdown: [
+      { label: 'Our Journey', href: '/about/journey' },
+      { label: 'Vision & Mission', href: '/about/vision-mission' },
+      { label: 'Motto', href: '/about/motto' },
+      { label: "Director's Message", href: '/about/director' },
+      { label: "Principal's Message", href: '/about/principal' },
+      { label: "Manager's Message", href: '/about/manager' },
+      { label: 'Mandatory Disclosure', href: '/about/disclosure' },
+    ]
+  },
+  { 
+    label: 'From the desk', 
+    href: '/about/director',
+    dropdown: [
+      { label: "Director's Desk", href: '/about/director' },
+      { label: "Principal's Desk", href: '/about/principal' },
+      { label: "Manager's Desk", href: '/about/manager' },
+    ]
+  },
+  { label: 'Mandatory Disclosure', href: '/about/disclosure' },
+  { label: 'Information', href: '/information' },
+  { label: 'Infrastructure', href: '/infrastructure' },
+  { label: 'Activities/Gallery', href: '/activities' },
+  { label: 'Downloads', href: '/downloads' },
+  { label: 'Student TC', href: '/student-tc' },
+  { label: 'Annual Function 2025', href: '/annual-function-2025', badge: '2025' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-  const [activeItem, setActiveItem] = useState('Home');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -43,35 +61,62 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14">
           
-          {/* Mobile Title indicator with new logo image when scrolled */}
-          <div className="flex xl:hidden items-center gap-2.5 text-white font-bold text-sm">
+          {/* Mobile Header Title */}
+          <Link to="/" className="flex xl:hidden items-center gap-2.5 text-white font-bold text-sm">
             <img src="/school_logo.png" alt="Logo" className="w-8 h-8 object-contain bg-white/10 rounded-md p-0.5" />
             <span className="truncate max-w-[200px]">Sun Flower Public School</span>
-          </div>
+          </Link>
 
-          {/* Desktop Links List */}
+          {/* Desktop Navigation Bar */}
           <div className="hidden xl:flex items-center justify-between w-full space-x-1">
-            {NAV_ITEMS.map((item) => {
-              const isActive = activeItem === item.label;
+            {NAV_MENU.map((item) => {
+              const isActive = location.pathname === item.href || 
+                (item.dropdown && item.dropdown.some(sub => sub.href === location.pathname));
+
               return (
-                <a
+                <div 
                   key={item.label}
-                  href={item.href}
-                  onClick={() => setActiveItem(item.label)}
-                  className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all duration-200 whitespace-nowrap flex items-center gap-1 relative ${
-                    isActive
-                      ? 'bg-[#E9931C] text-[#0B3560] shadow-md font-bold'
-                      : 'text-white/90 hover:bg-white/10 hover:text-[#E9931C]'
-                  }`}
+                  className="relative group"
+                  onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  {item.label === 'Home' && <Home className="w-3.5 h-3.5 inline-block mr-0.5" />}
-                  {item.label}
-                  {item.badge && (
-                    <span className="ml-1 px-1.5 py-0.5 text-[9px] font-black bg-[#E9931C] text-[#0B3560] rounded-full leading-none">
-                      {item.badge}
-                    </span>
+                  <Link
+                    to={item.href}
+                    className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all duration-200 whitespace-nowrap flex items-center gap-1 relative ${
+                      isActive
+                        ? 'bg-[#E9931C] text-[#0B3560] shadow-md font-bold'
+                        : 'text-white/90 hover:bg-white/10 hover:text-[#E9931C]'
+                    }`}
+                  >
+                    {item.label === 'Home' && <Home className="w-3.5 h-3.5 inline-block mr-0.5" />}
+                    <span>{item.label}</span>
+                    {item.badge && (
+                      <span className="ml-1 px-1.5 py-0.5 text-[9px] font-black bg-[#E9931C] text-[#0B3560] rounded-full leading-none">
+                        {item.badge}
+                      </span>
+                    )}
+                    {item.dropdown && <ChevronDown className="w-3 h-3 ml-0.5 opacity-80" />}
+                  </Link>
+
+                  {/* Desktop Dropdown Menu */}
+                  {item.dropdown && openDropdown === item.label && (
+                    <div className="absolute top-full left-0 w-52 bg-white rounded-xl shadow-2xl py-2 border border-gray-100 animate-fade-in z-50 mt-1">
+                      {item.dropdown.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          to={sub.href}
+                          className={`block px-4 py-2 text-xs font-semibold transition-colors ${
+                            location.pathname === sub.href
+                              ? 'bg-blue-50 text-[#10457B] font-bold border-l-4 border-[#E9931C]'
+                              : 'text-gray-700 hover:bg-amber-50/70 hover:text-[#10457B]'
+                          }`}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
                   )}
-                </a>
+                </div>
               );
             })}
           </div>
@@ -89,29 +134,57 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#0B3560] border-b border-blue-800 px-4 pt-2 pb-6 space-y-1 shadow-2xl animate-fade-in">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={() => {
-                setActiveItem(item.label);
-                setMobileMenuOpen(false);
-              }}
-              className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                activeItem === item.label
-                  ? 'bg-[#E9931C] text-[#0B3560] font-bold'
-                  : 'text-blue-100 hover:bg-blue-800/60 hover:text-[#E9931C]'
-              }`}
-            >
-              <div className="flex items-center gap-2">
-                {item.label === 'Home' && <Home className="w-4 h-4" />}
-                <span>{item.label}</span>
+        <div className="xl:hidden bg-[#0B3560] border-b border-blue-800 px-4 pt-2 pb-6 space-y-1 shadow-2xl max-h-[80vh] overflow-y-auto">
+          {NAV_MENU.map((item) => (
+            <div key={item.label} className="space-y-1">
+              <div className="flex items-center justify-between">
+                <Link
+                  to={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex-1 flex items-center justify-between px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                    location.pathname === item.href
+                      ? 'bg-[#E9931C] text-[#0B3560] font-bold'
+                      : 'text-blue-100 hover:bg-blue-800/60 hover:text-[#E9931C]'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    {item.label === 'Home' && <Home className="w-4 h-4" />}
+                    <span>{item.label}</span>
+                  </div>
+                </Link>
+
+                {item.dropdown && (
+                  <button
+                    onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                    className="p-2 text-blue-200 hover:text-[#E9931C]"
+                  >
+                    <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} />
+                  </button>
+                )}
               </div>
-              <ChevronRight className="w-4 h-4 opacity-70" />
-            </a>
+
+              {/* Mobile Submenu Dropdown */}
+              {item.dropdown && openDropdown === item.label && (
+                <div className="pl-6 space-y-1 py-1 bg-blue-950/40 rounded-lg">
+                  {item.dropdown.map((sub) => (
+                    <Link
+                      key={sub.label}
+                      to={sub.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-4 py-2 text-xs font-semibold rounded-md transition-colors ${
+                        location.pathname === sub.href
+                          ? 'text-[#E9931C] font-bold bg-blue-900/50'
+                          : 'text-blue-200 hover:text-white'
+                      }`}
+                    >
+                      • {sub.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       )}
