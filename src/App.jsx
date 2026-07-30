@@ -9,6 +9,9 @@ import Director from './pages/About/Director';
 import Principal from './pages/About/Principal';
 import Manager from './pages/About/Manager';
 import Disclosure from './pages/About/Disclosure';
+import SMCPage from './pages/About/SMCPage';
+import PTAPage from './pages/About/PTAPage';
+import MembersListPage from './pages/About/MembersListPage';
 import AcademicsPage from './pages/Academics/AcademicsPage';
 import ExaminationPattern from './pages/Academics/ExaminationPattern';
 import CodeOfConduct from './pages/Academics/CodeOfConduct';
@@ -47,6 +50,12 @@ export default function App() {
           <Route path="/about/manager" element={<Manager />} />
           <Route path="/about/disclosure" element={<Disclosure />} />
           <Route path="/information" element={<Disclosure />} />
+          <Route path="/about/smc" element={<SMCPage />} />
+          <Route path="/smc" element={<SMCPage />} />
+          <Route path="/about/pta" element={<PTAPage />} />
+          <Route path="/pta" element={<PTAPage />} />
+          <Route path="/about/members-list" element={<MembersListPage />} />
+          <Route path="/members-list" element={<MembersListPage />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/academics/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/information/code-of-conduct" element={<CodeOfConduct />} />

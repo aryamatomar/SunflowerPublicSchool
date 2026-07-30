@@ -14,6 +14,9 @@ const NAV_MENU = [
       { label: "Director's Message", href: '/about/director' },
       { label: "Principal's Message", href: '/about/principal' },
       { label: "Manager's Message", href: '/about/manager' },
+      { label: 'School Management Committee (SMC)', href: '/about/smc' },
+      { label: 'Parent Teacher Association (PTA)', href: '/about/pta' },
+      { label: 'Members List', href: '/about/members-list' },
       { label: 'Mandatory Disclosure', href: '/about/disclosure' },
     ]
   },
@@ -127,7 +130,7 @@ export default function Navbar() {
 
                   {/* Desktop Dropdown Menu */}
                   {item.dropdown && openDropdown === item.label && (
-                    <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-2xl py-2 border border-gray-100 animate-fade-in z-50 mt-1">
+                    <div className="absolute top-full left-0 w-72 bg-white rounded-xl shadow-2xl py-2 border border-gray-100 animate-fade-in z-50 mt-1">
                       {item.dropdown.map((sub) => (
                         <Link
                           key={sub.label}
