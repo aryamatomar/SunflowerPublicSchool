@@ -1,21 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ShieldCheck, ArrowUp } from 'lucide-react';
 
 const QUICK_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Sunflower', href: '#about' },
-  { label: 'From the desk', href: '#desk' },
-  { label: 'Mandatory Disclosure', href: '#disclosure' },
-  { label: 'Information', href: '#information' },
-  { label: 'Infrastructure', href: '#infrastructure' },
+  { label: 'Home', href: '/' },
+  { label: 'About Sunflower', href: '/about/journey' },
+  { label: 'Code of Conduct', href: '/code-of-conduct' },
+  { label: 'Examination & Evaluation', href: '/academics/examination-pattern' },
+  { label: 'Mandatory Disclosure', href: '/about/disclosure' },
+  { label: 'Infrastructure', href: '/infrastructure' },
 ];
 
 const SECONDARY_LINKS = [
-  { label: 'Activities/Gallery', href: '#gallery' },
-  { label: 'Downloads', href: '#downloads' },
-  { label: 'Student TC', href: '#tc' },
-  { label: 'Annual Function 2025', href: '#annual-function' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Academics Overview', href: '/academics' },
+  { label: 'Activities / Gallery', href: '/activities' },
+  { label: 'Downloads', href: '/downloads' },
+  { label: 'Student TC', href: '/student-tc' },
+  { label: 'Annual Function 2025', href: '/annual-function-2025' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 export default function Footer() {
@@ -67,13 +69,13 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               {QUICK_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href}
+                  <Link 
+                    to={link.href}
                     className="text-blue-100 hover:text-[#E9931C] transition-colors flex items-center gap-1.5"
                   >
                     <span className="text-[#E9931C] font-bold">•</span>
                     <span>{link.label}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,13 +89,13 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               {SECONDARY_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href}
+                  <Link 
+                    to={link.href}
                     className="text-blue-100 hover:text-[#E9931C] transition-colors flex items-center gap-1.5"
                   >
                     <span className="text-[#E9931C] font-bold">•</span>
                     <span>{link.label}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -130,7 +132,7 @@ export default function Footer() {
               <div className="flex items-center gap-3 pt-2">
                 <span className="text-xs font-semibold text-blue-200">Follow Us:</span>
                 <a 
-                  href="https://facebook.com" 
+                  href="https://www.facebook.com/sunfloweragra/" 
                   target="_blank" 
                   rel="noreferrer"
                   className="bg-blue-900 p-2 rounded-full text-[#E9931C] hover:bg-[#E9931C] hover:text-[#0B3560] transition-all"

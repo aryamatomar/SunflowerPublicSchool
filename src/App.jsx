@@ -10,6 +10,8 @@ import Principal from './pages/About/Principal';
 import Manager from './pages/About/Manager';
 import Disclosure from './pages/About/Disclosure';
 import AcademicsPage from './pages/Academics/AcademicsPage';
+import ExaminationPattern from './pages/Academics/ExaminationPattern';
+import CodeOfConduct from './pages/Academics/CodeOfConduct';
 import InfrastructurePage from './pages/Infrastructure/InfrastructurePage';
 import AdmissionPage from './pages/Admission/AdmissionPage';
 import DownloadsPage from './pages/Downloads/DownloadsPage';
@@ -41,7 +43,12 @@ export default function App() {
           <Route path="/about/manager" element={<Manager />} />
           <Route path="/about/disclosure" element={<Disclosure />} />
           <Route path="/information" element={<Disclosure />} />
+          <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="/academics/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="/information/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/academics" element={<AcademicsPage />} />
+          <Route path="/academics/examination-pattern" element={<ExaminationPattern />} />
+          <Route path="/examination-pattern" element={<ExaminationPattern />} />
           <Route path="/infrastructure" element={<InfrastructurePage />} />
           <Route path="/admission" element={<AdmissionPage />} />
           <Route path="/downloads" element={<DownloadsPage />} />
