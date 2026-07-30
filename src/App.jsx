@@ -12,6 +12,8 @@ import Disclosure from './pages/About/Disclosure';
 import AcademicsPage from './pages/Academics/AcademicsPage';
 import ExaminationPattern from './pages/Academics/ExaminationPattern';
 import CodeOfConduct from './pages/Academics/CodeOfConduct';
+import FeeStructure from './pages/Information/FeeStructure';
+import AnnualActivity from './pages/Activities/AnnualActivity';
 import InfrastructurePage from './pages/Infrastructure/InfrastructurePage';
 import AdmissionPage from './pages/Admission/AdmissionPage';
 import DownloadsPage from './pages/Downloads/DownloadsPage';
@@ -46,6 +48,11 @@ export default function App() {
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/academics/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/information/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="/fee-structure" element={<FeeStructure />} />
+          <Route path="/information/fee-structure" element={<FeeStructure />} />
+          <Route path="/annual-activity" element={<AnnualActivity />} />
+          <Route path="/activities/annual-activity" element={<AnnualActivity />} />
+          <Route path="/academic-calendar" element={<AnnualActivity />} />
           <Route path="/academics" element={<AcademicsPage />} />
           <Route path="/academics/examination-pattern" element={<ExaminationPattern />} />
           <Route path="/examination-pattern" element={<ExaminationPattern />} />
