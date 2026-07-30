@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ChevronRight, Home } from 'lucide-react';
+import { Menu, X, ChevronDown, Home } from 'lucide-react';
 
 const NAV_MENU = [
   { label: 'Home', href: '/' },
@@ -26,8 +26,26 @@ const NAV_MENU = [
       { label: "Manager's Desk", href: '/about/manager' },
     ]
   },
+  { 
+    label: 'Academics', 
+    href: '/academics',
+    dropdown: [
+      { label: 'Examination & Evaluation Pattern', href: '/academics/examination-pattern' },
+      { label: 'Code of Conduct', href: '/code-of-conduct' },
+      { label: 'Academics Overview', href: '/academics' },
+    ]
+  },
+  { 
+    label: 'Information', 
+    href: '/information',
+    dropdown: [
+      { label: 'Code of Conduct', href: '/code-of-conduct' },
+      { label: 'Examination & Evaluation Pattern', href: '/academics/examination-pattern' },
+      { label: 'Fee Structure & Rules', href: '/admission' },
+      { label: 'Mandatory Disclosure', href: '/about/disclosure' },
+    ]
+  },
   { label: 'Mandatory Disclosure', href: '/about/disclosure' },
-  { label: 'Information', href: '/information' },
   { label: 'Infrastructure', href: '/infrastructure' },
   { label: 'Activities/Gallery', href: '/activities' },
   { label: 'Downloads', href: '/downloads' },
@@ -82,7 +100,7 @@ export default function Navbar() {
                 >
                   <Link
                     to={item.href}
-                    className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all duration-200 whitespace-nowrap flex items-center gap-1 relative ${
+                    className={`px-2.5 py-2 text-xs font-semibold rounded-lg transition-all duration-200 whitespace-nowrap flex items-center gap-1 relative ${
                       isActive
                         ? 'bg-[#E9931C] text-[#0B3560] shadow-md font-bold'
                         : 'text-white/90 hover:bg-white/10 hover:text-[#E9931C]'
@@ -100,12 +118,12 @@ export default function Navbar() {
 
                   {/* Desktop Dropdown Menu */}
                   {item.dropdown && openDropdown === item.label && (
-                    <div className="absolute top-full left-0 w-52 bg-white rounded-xl shadow-2xl py-2 border border-gray-100 animate-fade-in z-50 mt-1">
+                    <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-2xl py-2 border border-gray-100 animate-fade-in z-50 mt-1">
                       {item.dropdown.map((sub) => (
                         <Link
                           key={sub.label}
                           to={sub.href}
-                          className={`block px-4 py-2 text-xs font-semibold transition-colors ${
+                          className={`block px-4 py-2.5 text-xs font-semibold transition-colors ${
                             location.pathname === sub.href
                               ? 'bg-blue-50 text-[#10457B] font-bold border-l-4 border-[#E9931C]'
                               : 'text-gray-700 hover:bg-amber-50/70 hover:text-[#10457B]'

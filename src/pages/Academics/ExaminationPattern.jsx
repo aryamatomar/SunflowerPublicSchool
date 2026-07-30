@@ -1,10 +1,9 @@
 import React from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeader from '../../components/PageHeader';
-import DocumentCard from '../../components/DocumentCard';
-import { BookOpen, Award, CheckCircle2 } from 'lucide-react';
+import { BookOpen, Table, Award, CheckCircle2, AlertCircle, FileText } from 'lucide-react';
 
-export default function AcademicsPage() {
+export default function ExaminationPattern() {
   const gradeScale = [
     { range: '91-100', grade: 'A1' },
     { range: '81-90', grade: 'A2' },
@@ -426,27 +425,6 @@ export default function AcademicsPage() {
               <span className="font-extrabold text-[#10457B]">Weightage: </span>
               <span>The session has two terms. Each term shall have TWO rounds of Periodic Assessments (PAs) Term exam (First Terminal & Final terminal). Both terms carry equal weightage.</span>
             </div>
-          </div>
-        </div>
-
-        {/* Downloads & Academic Documents */}
-        <div>
-          <h2 className="text-2xl font-bold text-[#10457B] mb-6 pb-2 border-b-2 border-[#E9931C] inline-block">
-            ACADEMIC CALENDAR & GUIDELINES
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <DocumentCard 
-              title="Annual Academic Calendar 2026-27" 
-              docUrl="https://sunfloweragra.com/docs/ANNUAL%20ACTIVITY%20CALENDAR%20202627.pdf" 
-            />
-            <DocumentCard 
-              title="Academic Calendar & Yearly Planner" 
-              docUrl="https://sunfloweragra.com/docs/yearly%20planner.docx" 
-            />
-            <DocumentCard 
-              title="School Rules & Guidelines For Students" 
-              docUrl="https://sunfloweragra.com/docs/rules-and-regulations.pdf" 
-            />
           </div>
         </div>
 
