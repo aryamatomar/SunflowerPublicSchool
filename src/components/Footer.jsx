@@ -13,8 +13,9 @@ const QUICK_LINKS = [
 
 const SECONDARY_LINKS = [
   { label: 'Academics Overview', href: '/academics' },
+  { label: 'School Timing', href: '/school-timing' },
+  { label: 'Fee Structure', href: '/fee-structure' },
   { label: 'Activities / Gallery', href: '/activities' },
-  { label: 'Downloads', href: '/downloads' },
   { label: 'Student TC', href: '/student-tc' },
   { label: 'Annual Function 2025', href: '/annual-function-2025' },
   { label: 'Contact Us', href: '/contact' },

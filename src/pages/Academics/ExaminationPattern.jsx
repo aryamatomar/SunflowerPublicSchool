@@ -1,7 +1,8 @@
 import React from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeader from '../../components/PageHeader';
-import { BookOpen, Table, Award, CheckCircle2, AlertCircle, FileText } from 'lucide-react';
+import DocumentCard from '../../components/DocumentCard';
+import { BookOpen, Award, CheckCircle2 } from 'lucide-react';
 
 export default function ExaminationPattern() {
   const gradeScale = [
@@ -139,7 +140,6 @@ export default function ExaminationPattern() {
             Scholastic Area: Whole academic year will be divided into two terms.
           </p>
 
-          {/* Table for VI-VIII */}
           <div className="overflow-x-auto border border-slate-200 rounded-xl shadow-sm">
             <table className="w-full text-left border-collapse text-sm sm:text-base">
               <thead>
@@ -150,7 +150,6 @@ export default function ExaminationPattern() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 text-slate-800">
-                {/* Term 1 */}
                 <tr className="bg-blue-50/50 font-bold">
                   <td colSpan={3} className="py-2.5 px-4 text-[#10457B]">Term – 1 (April – September)</td>
                 </tr>
@@ -185,7 +184,6 @@ export default function ExaminationPattern() {
                   <td className="py-3 px-4 text-[#E9931C]">100</td>
                 </tr>
 
-                {/* Term 2 */}
                 <tr className="bg-blue-50/50 font-bold border-t-2 border-slate-300">
                   <td colSpan={3} className="py-2.5 px-4 text-[#10457B]">Term – 2 (October– March)</td>
                 </tr>
@@ -220,7 +218,6 @@ export default function ExaminationPattern() {
                   <td className="py-3 px-4 text-[#E9931C]">100</td>
                 </tr>
 
-                {/* Cumulative */}
                 <tr className="bg-[#10457B] text-white font-extrabold text-base">
                   <td className="py-3 px-4">Cumulative Result</td>
                   <td className="py-3 px-4">100+100</td>
@@ -234,7 +231,6 @@ export default function ExaminationPattern() {
             Term- II Written Exam for 80 marks will include; ( 10 %,  20% & 30 % of syllabus of Term 1)
           </p>
 
-          {/* Grades Table */}
           <div className="mt-8">
             <h3 className="text-xl font-bold text-[#10457B] mb-4">Grades according to marks obtained</h3>
             <div className="overflow-x-auto border border-slate-200 rounded-xl max-w-md">
@@ -257,7 +253,6 @@ export default function ExaminationPattern() {
             </div>
           </div>
 
-          {/* CO-SCHOLASTIC AREAS */}
           <div className="pt-6 border-t border-slate-100">
             <h3 className="text-xl font-bold text-[#10457B] mb-4">CO- SCHOLASTIC AREAS:</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-800 font-semibold mb-6">
@@ -312,7 +307,6 @@ export default function ExaminationPattern() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 text-slate-800">
-                {/* Term 1 */}
                 <tr className="bg-blue-50/50 font-bold">
                   <td colSpan={3} className="py-2.5 px-4 text-[#10457B]">Term – 1 (April – September)</td>
                 </tr>
@@ -347,7 +341,6 @@ export default function ExaminationPattern() {
                   <td className="py-3 px-4 text-[#E9931C]">100</td>
                 </tr>
 
-                {/* Term 2 */}
                 <tr className="bg-blue-50/50 font-bold border-t-2 border-slate-300">
                   <td colSpan={3} className="py-2.5 px-4 text-[#10457B]">Term – 2 (October– March)</td>
                 </tr>
@@ -419,12 +412,24 @@ export default function ExaminationPattern() {
             </div>
           </div>
 
-          {/* WEIGHTAGE NOTE */}
           <div className="pt-4 border-t border-slate-100">
             <div className="bg-amber-50 p-5 rounded-xl border border-amber-200 text-slate-800">
               <span className="font-extrabold text-[#10457B]">Weightage: </span>
               <span>The session has two terms. Each term shall have TWO rounds of Periodic Assessments (PAs) Term exam (First Terminal & Final terminal). Both terms carry equal weightage.</span>
             </div>
+          </div>
+        </div>
+
+        {/* Downloadable Official Academic Calendar Document */}
+        <div>
+          <h3 className="text-xl font-bold text-[#10457B] mb-4 pb-2 border-b-2 border-[#E9931C] inline-block">
+            ACADEMIC CALENDAR & YEARLY PLANNER ATTACHMENT
+          </h3>
+          <div className="max-w-md">
+            <DocumentCard 
+              title="Academic Calendar & Yearly Planner Document" 
+              docUrl="https://sunfloweragra.com/docs/yearly%20planner.docx" 
+            />
           </div>
         </div>
 

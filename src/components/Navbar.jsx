@@ -11,9 +11,6 @@ const NAV_MENU = [
       { label: 'Our Journey', href: '/about/journey' },
       { label: 'Vision & Mission', href: '/about/vision-mission' },
       { label: 'Motto', href: '/about/motto' },
-      { label: "Director's Message", href: '/about/director' },
-      { label: "Principal's Message", href: '/about/principal' },
-      { label: "Manager's Message", href: '/about/manager' },
       { label: 'School Management Committee (SMC)', href: '/about/smc' },
       { label: 'Parent Teacher Association (PTA)', href: '/about/pta' },
       { label: 'Members List', href: '/about/members-list' },
@@ -33,6 +30,7 @@ const NAV_MENU = [
     label: 'Academics', 
     href: '/academics',
     dropdown: [
+      { label: 'Assessment', href: '/academics/assessment' },
       { label: 'Examination & Evaluation Pattern', href: '/academics/examination-pattern' },
       { label: 'Code of Conduct', href: '/code-of-conduct' },
       { label: 'Academics Overview', href: '/academics' },
@@ -60,7 +58,6 @@ const NAV_MENU = [
       { label: 'Activities & Event Gallery', href: '/activities' },
     ]
   },
-  { label: 'Downloads', href: '/downloads' },
   { label: 'Student TC', href: '/student-tc' },
   { label: 'Annual Function 2025', href: '/annual-function-2025', badge: '2025' },
   { label: 'Contact', href: '/contact' },
@@ -82,7 +79,7 @@ export default function Navbar() {
 
   return (
     <nav 
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-[#2A2D34] z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-[#10457B]/95 backdrop-blur-md shadow-lg py-1' 
           : 'bg-[#10457B] py-0'

@@ -1,7 +1,8 @@
 import React from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeader from '../../components/PageHeader';
-import { ShieldCheck, AlertCircle, FileText, CheckCircle2, Clock, AlertTriangle, ShieldAlert, Award } from 'lucide-react';
+import DocumentCard from '../../components/DocumentCard';
+import { ShieldCheck, AlertCircle, ShieldAlert, AlertTriangle } from 'lucide-react';
 
 export default function CodeOfConduct() {
   const conductRules = [
@@ -68,7 +69,6 @@ export default function CodeOfConduct() {
             </h2>
           </div>
 
-          {/* List of 4 Measures */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200 flex items-start gap-3">
               <span className="font-bold text-[#E9931C] text-lg">1.</span>
@@ -90,9 +90,7 @@ export default function CodeOfConduct() {
             </div>
           </div>
 
-          {/* Detailed Disciplinary Policy Cards */}
           <div className="space-y-6 pt-4 border-t border-slate-100">
-            {/* Expulsion Policy */}
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
               <h3 className="text-xl font-bold text-[#10457B] flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-red-600" />
@@ -103,7 +101,6 @@ export default function CodeOfConduct() {
               </p>
             </div>
 
-            {/* Yellow Card Policy */}
             <div className="bg-amber-50/60 p-6 rounded-2xl border border-amber-300 space-y-3">
               <h3 className="text-xl font-bold text-amber-900 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-amber-600" />
@@ -114,7 +111,6 @@ export default function CodeOfConduct() {
               </p>
             </div>
 
-            {/* Red Card Policy */}
             <div className="bg-red-50/60 p-6 rounded-2xl border border-red-300 space-y-3">
               <h3 className="text-xl font-bold text-red-900 flex items-center gap-2">
                 <ShieldAlert className="w-5 h-5 text-red-600" />
@@ -126,6 +122,19 @@ export default function CodeOfConduct() {
             </div>
           </div>
 
+        </div>
+
+        {/* Downloadable Document Attachment */}
+        <div>
+          <h3 className="text-xl font-bold text-[#10457B] mb-4 pb-2 border-b-2 border-[#E9931C] inline-block">
+            OFFICIAL CODE OF CONDUCT DOCUMENT
+          </h3>
+          <div className="max-w-md">
+            <DocumentCard 
+              title="School Rules & Student Guidelines Document" 
+              docUrl="https://sunfloweragra.com/docs/rules-and-regulations.pdf" 
+            />
+          </div>
         </div>
 
       </div>
