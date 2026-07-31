@@ -15,13 +15,13 @@ import MembersListPage from './pages/About/MembersListPage';
 import AcademicsPage from './pages/Academics/AcademicsPage';
 import ExaminationPattern from './pages/Academics/ExaminationPattern';
 import CodeOfConduct from './pages/Academics/CodeOfConduct';
+import AssessmentPage from './pages/Academics/AssessmentPage';
 import FeeStructure from './pages/Information/FeeStructure';
 import SchoolTiming from './pages/Information/SchoolTiming';
 import AnnualActivity from './pages/Activities/AnnualActivity';
 import WorkshopsOrientation from './pages/Activities/WorkshopsOrientation';
 import InfrastructurePage from './pages/Infrastructure/InfrastructurePage';
 import AdmissionPage from './pages/Admission/AdmissionPage';
-import DownloadsPage from './pages/Downloads/DownloadsPage';
 import ActivitiesPage from './pages/Activities/ActivitiesPage';
 import StudentTCPage from './pages/StudentTC/StudentTCPage';
 import AnnualFunctionPage from './pages/AnnualFunction/AnnualFunctionPage';
@@ -73,9 +73,10 @@ export default function App() {
           <Route path="/academics" element={<AcademicsPage />} />
           <Route path="/academics/examination-pattern" element={<ExaminationPattern />} />
           <Route path="/examination-pattern" element={<ExaminationPattern />} />
+          <Route path="/academics/assessment" element={<AssessmentPage />} />
+          <Route path="/assessment" element={<AssessmentPage />} />
           <Route path="/infrastructure" element={<InfrastructurePage />} />
           <Route path="/admission" element={<AdmissionPage />} />
-          <Route path="/downloads" element={<DownloadsPage />} />
           <Route path="/activities" element={<ActivitiesPage />} />
           <Route path="/student-tc" element={<StudentTCPage />} />
           <Route path="/annual-function-2025" element={<AnnualFunctionPage />} />
