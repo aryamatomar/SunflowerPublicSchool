@@ -42,7 +42,6 @@ const NAV_MENU = [
       { label: 'School Timing', href: '/school-timing' },
       { label: 'Fee Structure 2026-27', href: '/fee-structure' },
       { label: 'Code of Conduct', href: '/code-of-conduct' },
-      { label: 'Examination & Evaluation Pattern', href: '/academics/examination-pattern' },
       { label: 'Mandatory Disclosure', href: '/about/disclosure' },
     ]
   },

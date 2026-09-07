@@ -21,7 +21,7 @@ export default function CodeOfConduct() {
     "Student suffering from contagious diseases are not permitted to come to the school till they are completely free from infection (Should produce a medical certificate at the time of resumption).",
     "Students should not damage the school properties. In case of damage a fine of the cost of the damaged article will be imposed.",
     "Students must not come to school on any other self-driven vehicles except bicycles.",
-    "Students must never change their bus etc. without the permission of the school authorities.",
+    "Students must never change their van etc. without the permission of the school authorities.",
     "Students must never stay in the school when not required by teachers or without the knowledge of parents.",
     "Excursion tours, educational camps organized by the school are compulsory for the students.",
     "Exemption can be granted by the Principal only on medical grounds.",
