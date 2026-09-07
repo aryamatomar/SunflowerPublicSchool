@@ -16,16 +16,15 @@ export default function Disclosure() {
     { title: "Copy of Self Certification by School", docUrl: "https://sunfloweragra.com/docs/copy-self-declaration.pdf" },
     { title: "Copies of Water and Sanitation Certificates", docUrl: "https://sunfloweragra.com/docs/copy-water-sanitation.pdf" },
     { title: "Faculty Details", docUrl: "https://sunfloweragra.com/docs/Faculty-Details.pdf" },
-    { title: "List of School Management Committee (SMC)", docUrl: "https://sunfloweragra.com/docs/SCHOOL%20COMMITTEE%20MEMBERS.pdf" },
-    { title: "List of Parent Teachers Associations (PTA)", docUrl: "https://sunfloweragra.com/docs/PARENTS%20TEACHER%20ASSOCIATION.pdf" },
+    { title: "List of School Management Committee (SMC)", docUrl: "/docs/SCHOOL_COMMITTEE_MEMBERS.png" },
+    { title: "List of Parent Teachers Associations (PTA)", docUrl: "/docs/PARENTS_TEACHER_ASSOCIATION.png" },
     { title: "Annual Academic Calendar 2026-27", docUrl: "https://sunfloweragra.com/docs/ANNUAL%20ACTIVITY%20CALENDAR%20202627.pdf" }
   ];
 
   const resultsData = [
-    { year: "2020-21", appeared: "52", passed: "52", percentage: "100%" },
-    { year: "2021-22", appeared: "61", passed: "59", percentage: "96.7%" },
-    { year: "2022-23", appeared: "69", passed: "69", percentage: "100%" },
-    { year: "2023-24", appeared: "70", passed: "65", percentage: "96%" }
+    { year: "2026", registered: "82-", passed: "80", percentage: "99.2 %" },
+    { year: "2025", registered: "74", passed: "74", percentage: "100%" },
+    { year: "2024", registered: "70", passed: "65", percentage: "96%" }
   ];
 
   return (
@@ -152,25 +151,25 @@ export default function Disclosure() {
         <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100">
           <div className="flex items-center gap-3 mb-6">
             <BarChart3 className="w-6 h-6 text-[#E9931C]" />
-            <h2 className="text-2xl font-bold text-[#10457B]">RESULT CLASS X (LAST THREE YEARS)</h2>
+            <h2 className="text-2xl font-bold text-[#10457B]">LAST 3 YEARS RESULTS</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-sm sm:text-base">
               <thead>
                 <tr className="bg-[#10457B] text-white">
-                  <th className="py-3 px-4 rounded-tl-lg">S. No.</th>
+                  <th className="py-3 px-4 rounded-tl-lg">SR NO</th>
                   <th className="py-3 px-4">YEAR</th>
-                  <th className="py-3 px-4">No. of Students Appeared</th>
-                  <th className="py-3 px-4">No. of Students Passed</th>
-                  <th className="py-3 px-4 rounded-tr-lg">Pass Percentage</th>
+                  <th className="py-3 px-4">NO OF REGISTERED STUDENTS</th>
+                  <th className="py-3 px-4">PASSED</th>
+                  <th className="py-3 px-4 rounded-tr-lg">PERCENTAGE</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {resultsData.map((res, i) => (
                   <tr key={i} className={i % 2 === 1 ? 'bg-slate-50/50' : ''}>
-                    <td className="py-3 px-4 font-bold text-[#10457B]">{i + 1}.</td>
+                    <td className="py-3 px-4 font-bold text-[#10457B]">{i + 1}</td>
                     <td className="py-3 px-4 font-semibold">{res.year}</td>
-                    <td className="py-3 px-4">{res.appeared}</td>
+                    <td className="py-3 px-4">{res.registered}</td>
                     <td className="py-3 px-4">{res.passed}</td>
                     <td className="py-3 px-4 font-bold text-emerald-600">{res.percentage}</td>
                   </tr>

@@ -8,13 +8,13 @@ export default function PTAPage() {
   const staffPta = [
     { srNo: 1, name: "MR ANIMESH DAYAL", designation: "MANAGER", position: "CHAIRMAN" },
     { srNo: 2, name: "DR SHUBHI DAYAL", designation: "PRINCIPAL", position: "SECRETARY" },
-    { srNo: 3, name: "MRS KARUNA KULSHRESTHA", designation: "COORDINATOR", position: "MEMBER" },
-    { srNo: 4, name: "MRS BABITA PRINJA", designation: "COORDINATOR", position: "MEMBER" },
+    { srNo: 3, name: "MRS NEELAM SHARMA", designation: "COORDINATOR", position: "MEMBER" },
+    { srNo: 4, name: "MRS KARUNA KULSHRESTHA", designation: "COORDINATOR", position: "MEMBER" },
     { srNo: 5, name: "MRS TRIVENI SRIVASTAVA", designation: "CLASS TEACHER", position: "MEMBER" },
     { srNo: 6, name: "MRS VANDANA SHARMA", designation: "CLASS TEACHER", position: "MEMBER" },
     { srNo: 7, name: "MRS SHIPRA JAIN", designation: "CLASS TEACHER", position: "MEMBER" },
     { srNo: 8, name: "MRS PRIYANKA KHANDELWAL", designation: "CLASS TEACHER", position: "MEMBER" },
-    { srNo: 9, name: "MRS SONALI DAS", designation: "CLASS TEACHER", position: "MEMBER" },
+    { srNo: 9, name: "MRS POOJA CHHABRA", designation: "CLASS TEACHER", position: "MEMBER" },
     { srNo: 10, name: "MRS ALIKA SINHA", designation: "CLASS TEACHER", position: "MEMBER" },
     { srNo: 11, name: "MR SHIVAM SRIVASTAVA", designation: "CLASS TEACHER", position: "MEMBER" },
   ];
@@ -113,7 +113,7 @@ export default function PTAPage() {
           <div className="max-w-md">
             <DocumentCard 
               title="List of Parent Teachers Associations (PTA) PDF" 
-              docUrl="https://sunfloweragra.com/docs/PARENTS%20TEACHER%20ASSOCIATION.pdf" 
+              docUrl="/docs/PARENTS_TEACHER_ASSOCIATION.png" 
             />
           </div>
         </div>

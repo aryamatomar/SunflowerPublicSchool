@@ -23,7 +23,7 @@ export default function SMCPage() {
     { srNo: 13, name: "DHIRENDRA SINGH", spouseFather: "VIR BHAN SINGH", designation: "EDUCATIONIST MEMBER" },
     { srNo: 14, name: "JANAK NANDINI", spouseFather: "SUMIT UPADHYAYA", designation: "EDUCATIONIST MEMBER" },
     { srNo: 15, name: "POOJA CHABBRA", spouseFather: "AMIT KUMAR", designation: "EDUCATIONIST MEMBER" },
-    { srNo: 16, name: "SONALI DAS", spouseFather: "DIVYATOSH DAS", designation: "EDUCATIONIST MEMBER" },
+    { srNo: 16, name: "BABITA PRINJA", spouseFather: "RAJESH PRINJA", designation: "EDUCATIONIST MEMBER" },
   ];
 
   const filteredMembers = smcMembers.filter(m => 
@@ -116,7 +116,7 @@ export default function SMCPage() {
           <div className="max-w-md">
             <DocumentCard 
               title="List of School Management Committee (SMC) PDF" 
-              docUrl="https://sunfloweragra.com/docs/SCHOOL%20COMMITTEE%20MEMBERS.pdf" 
+              docUrl="/docs/SCHOOL_COMMITTEE_MEMBERS.png" 
             />
           </div>
         </div>
