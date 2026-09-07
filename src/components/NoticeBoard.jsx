@@ -43,7 +43,7 @@ export default function NoticeBoard() {
                     Active Admission
                   </div>
                   <p className="text-base sm:text-lg font-bold text-gray-900 font-poppins">
-                    1). Admission open for the session 2025-26
+                    1). Admission Open for 2026–2027
                   </p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function NoticeBoard() {
                 Admission Desk
               </h4>
               <p className="text-blue-100/80 text-sm leading-relaxed">
-                Parents and guardians seeking admission for session 2026-27 or 2025-26 can contact our helpline or visit the campus during office hours.
+                Parents and guardians seeking admission for session 2026-27 can contact our helpline or visit the campus during office hours.
               </p>
               <div className="pt-2">
                 <a
