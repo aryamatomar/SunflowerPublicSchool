@@ -1,6 +1,6 @@
 // Official School Gallery Data
 // Source of truth: Google Drive Official School Photographs Repository
-// Total Events: 8
+// Total Events: 9
 
 export const GALLERY_EVENTS = [
   {
@@ -606,6 +606,67 @@ export const GALLERY_EVENTS = [
         "src": "/gallery/WhatsApp Image 2026-09-02 at 9.48.34 AM.jpeg",
         "title": "Janmashtami Celebration",
         "date": "September 2, 2026",
+        "academicYear": "2026–27"
+      }
+    ]
+  },
+  {
+    "id": "haryali-teej-2026",
+    "title": "Haryali Teej",
+    "category": "Cultural Celebrations",
+    "academicYear": "2026–27",
+    "date": "August 14, 2026",
+    "bannerMotto": "Sunflower Public School, Agra — Haryali Teej Celebration & Mehndi Competition",
+    "description": "Festive Haryali Teej celebrations featuring vibrant traditional attire, mehndi design competitions, cultural presentations, and joyful community bonding among students and teachers.",
+    "coverImage": "/gallery/IMG_20260814_112928753.jpg",
+    "images": [
+      {
+        "id": "IMG_20260814_112928753.jpg",
+        "src": "/gallery/IMG_20260814_112928753.jpg",
+        "title": "Haryali Teej",
+        "date": "August 14, 2026",
+        "academicYear": "2026–27"
+      },
+      {
+        "id": "IMG_20260814_120335133.jpg",
+        "src": "/gallery/IMG_20260814_120335133.jpg",
+        "title": "Haryali Teej",
+        "date": "August 14, 2026",
+        "academicYear": "2026–27"
+      },
+      {
+        "id": "IMG_20260814_124343667.jpg",
+        "src": "/gallery/IMG_20260814_124343667.jpg",
+        "title": "Haryali Teej",
+        "date": "August 14, 2026",
+        "academicYear": "2026–27"
+      },
+      {
+        "id": "IMG_20260814_124451765.jpg",
+        "src": "/gallery/IMG_20260814_124451765.jpg",
+        "title": "Haryali Teej",
+        "date": "August 14, 2026",
+        "academicYear": "2026–27"
+      },
+      {
+        "id": "IMG_20260814_125301341.jpg",
+        "src": "/gallery/IMG_20260814_125301341.jpg",
+        "title": "Haryali Teej",
+        "date": "August 14, 2026",
+        "academicYear": "2026–27"
+      },
+      {
+        "id": "IMG_20260814_125304126.jpg",
+        "src": "/gallery/IMG_20260814_125304126.jpg",
+        "title": "Haryali Teej",
+        "date": "August 14, 2026",
+        "academicYear": "2026–27"
+      },
+      {
+        "id": "IMG_20260814_125305409.jpg",
+        "src": "/gallery/IMG_20260814_125305409.jpg",
+        "title": "Haryali Teej",
+        "date": "August 14, 2026",
         "academicYear": "2026–27"
       }
     ]
