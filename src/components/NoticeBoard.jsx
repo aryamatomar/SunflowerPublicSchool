@@ -121,7 +121,7 @@ export default function NoticeBoard() {
 
             <div className="pt-6 border-t border-blue-800/80 mt-6 relative z-10">
               <div className="flex items-center justify-between text-xs text-blue-200">
-                <span>Timings: 8:00 AM - 2:00 PM</span>
+                <span>Timings: 8:00 AM - 1:30 PM</span>
                 <span className="font-semibold text-[#E9931C]">Mon - Sat</span>
               </div>
             </div>

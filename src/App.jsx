@@ -73,6 +73,8 @@ export default function App() {
           <Route path="/academics" element={<AcademicsPage />} />
           <Route path="/academics/examination-pattern" element={<ExaminationPattern />} />
           <Route path="/examination-pattern" element={<ExaminationPattern />} />
+          <Route path="/academics/exam-evaluation-pattern" element={<ExaminationPattern />} />
+          <Route path="/exam-evaluation-pattern" element={<ExaminationPattern />} />
           <Route path="/academics/assessment" element={<AssessmentPage />} />
           <Route path="/assessment" element={<AssessmentPage />} />
           <Route path="/infrastructure" element={<InfrastructurePage />} />

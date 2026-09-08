@@ -11,26 +11,23 @@ export default function CodeOfConduct() {
     "Books are the religious part of our life, students are only responsible to maintain their books and exercise copies, students will be awarded for good maintenance of their stationary but they may also be asked to change/ bind your books in mid-session.",
     "Every student will have to participate in every cultural/religious and patriotic activity.",
     "Student will strictly follow the study time table given by the school.",
-    "Discipline, well manners and obedience are the key words for students. School will not bear at any cost an undisciplined, manner less and disobedient student. He/she may be suspended or struck off any time from the school.",
+    "Discipline, well manners and obedience are the key words for students. School will not bear at any cost an undisciplined, manner less and disobedient student. He/she may be suspended or struck off any time from the school if found violating themselves.",
     "All students are liable to support the school to maintain a healthy school culture, discipline, patriotic feeling, and moral character of their junior.",
     "Students must bring their diaries, ID Cards to school every day.",
     "They should be punctual and regular to school.",
     "They should attend Morning Prayer regularly. Important Announcements are made in the morning assembly.",
-    "Running in the school building or premises is not allowed.",
+    "Running in the school building or in corridor is not allowed.",
     "Students are not allowed to bring any cash, jewelry, mobile phone or any other valuable articles to school. School will not be responsible for any kind of loss.",
     "Student suffering from contagious diseases are not permitted to come to the school till they are completely free from infection (Should produce a medical certificate at the time of resumption).",
     "Students should not damage the school properties. In case of damage a fine of the cost of the damaged article will be imposed.",
     "Students must not come to school on any other self-driven vehicles except bicycles.",
     "Students must never change their van etc. without the permission of the school authorities.",
-    "Students must never stay in the school when not required by teachers or without the knowledge of parents.",
-    "Excursion tours, educational camps organized by the school are compulsory for the students.",
-    "Exemption can be granted by the Principal only on medical grounds.",
-    "All students must reach the school in time. Late comers would not be allowed in classes until they get Principal's permission."
+    "Students must never stay in the school when not required by teachers or without the knowledge of parents."
   ];
 
   return (
     <div className="bg-slate-50 min-h-screen pb-16">
-      <Breadcrumb items={[{ label: 'Information' }, { label: 'Code of Conduct' }]} />
+      <Breadcrumb items={[{ label: 'Academics' }, { label: 'Code of Conduct' }]} />
       <PageHeader 
         title="CODE OF CONDUCT" 
         subtitle="Official Student Rules, Discipline Standards & Disciplinary Measures"
