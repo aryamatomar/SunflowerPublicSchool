@@ -17,6 +17,7 @@ import AcademicsPage from './pages/Academics/AcademicsPage';
 import ExaminationPattern from './pages/Academics/ExaminationPattern';
 import CodeOfConduct from './pages/Academics/CodeOfConduct';
 import AssessmentPage from './pages/Academics/AssessmentPage';
+import SyllabusPage from './pages/Academics/SyllabusPage';
 import FeeStructure from './pages/Information/FeeStructure';
 import SchoolTiming from './pages/Information/SchoolTiming';
 import AdmissionCriteria from './pages/Information/AdmissionCriteria';
@@ -91,6 +92,8 @@ export default function App() {
           <Route path="/exam-evaluation-pattern" element={<ExaminationPattern />} />
           <Route path="/academics/assessment" element={<AssessmentPage />} />
           <Route path="/assessment" element={<AssessmentPage />} />
+          <Route path="/academics/syllabus" element={<SyllabusPage />} />
+          <Route path="/syllabus" element={<SyllabusPage />} />
           <Route path="/infrastructure" element={<InfrastructurePage />} />
           <Route path="/infrastructure/curriculum" element={<CurriculumPage />} />
           <Route path="/curriculum" element={<CurriculumPage />} />

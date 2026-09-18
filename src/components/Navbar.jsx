@@ -31,6 +31,7 @@ const NAV_MENU = [
     label: 'Academics', 
     href: '/academics',
     dropdown: [
+      { label: 'Syllabus', href: '/academics/syllabus' },
       { label: 'Code of Conduct', href: '/code-of-conduct' },
       { label: 'Exam & Evaluation Pattern', href: '/academics/examination-pattern' },
       { label: 'Assessment', href: '/academics/assessment' },
