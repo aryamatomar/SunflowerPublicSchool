@@ -43,6 +43,7 @@ const NAV_MENU = [
     href: '/information',
     dropdown: [
       { label: 'Admission Criteria', href: '/information/admission-criteria' },
+      { label: 'CBSE Curriculum', href: '/information/cbse-curriculum' },
       { label: 'School Timing', href: '/school-timing' },
       { label: 'Fee Structure 2026-27', href: '/fee-structure' },
     ]
