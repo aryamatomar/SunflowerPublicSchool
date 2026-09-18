@@ -20,6 +20,7 @@ import AssessmentPage from './pages/Academics/AssessmentPage';
 import FeeStructure from './pages/Information/FeeStructure';
 import SchoolTiming from './pages/Information/SchoolTiming';
 import AdmissionCriteria from './pages/Information/AdmissionCriteria';
+import CBSECurriculum from './pages/Information/CBSECurriculum';
 import AnnualActivity from './pages/Activities/AnnualActivity';
 import WorkshopsOrientation from './pages/Activities/WorkshopsOrientation';
 import InfrastructurePage from './pages/Infrastructure/InfrastructurePage';
@@ -70,6 +71,8 @@ export default function App() {
           <Route path="/information/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/information/admission-criteria" element={<AdmissionCriteria />} />
           <Route path="/admission-criteria" element={<AdmissionCriteria />} />
+          <Route path="/information/cbse-curriculum" element={<CBSECurriculum />} />
+          <Route path="/cbse-curriculum" element={<CBSECurriculum />} />
           <Route path="/fee-structure" element={<FeeStructure />} />
           <Route path="/information/fee-structure" element={<FeeStructure />} />
           <Route path="/school-timing" element={<SchoolTiming />} />
