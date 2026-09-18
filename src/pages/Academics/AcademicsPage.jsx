@@ -430,7 +430,7 @@ export default function AcademicsPage() {
         </div>
 
         {/* Downloads & Academic Documents */}
-        <div>
+        <div id="downloads">
           <h2 className="text-2xl font-bold text-[#10457B] mb-6 pb-2 border-b-2 border-[#E9931C] inline-block">
             ACADEMIC CALENDAR & GUIDELINES
           </h2>
@@ -446,6 +446,11 @@ export default function AcademicsPage() {
             <DocumentCard 
               title="School Rules & Guidelines For Students" 
               docUrl="https://sunfloweragra.com/docs/rules-and-regulations.pdf" 
+            />
+            <DocumentCard 
+              title="Diary" 
+              description="Download the school diary"
+              docUrl="https://drive.google.com/drive/folders/1x8kidb6BLVA_dVW_Bwn70DaLjX6jPcjq?usp=drive_link" 
             />
           </div>
         </div>

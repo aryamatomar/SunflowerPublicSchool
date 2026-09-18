@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import PageLayout from './components/PageLayout';
 import HomePage from './pages/Home/HomePage';
 import Journey from './pages/About/Journey';
+import History from './pages/About/History';
 import VisionMission from './pages/About/VisionMission';
 import Motto from './pages/About/Motto';
 import Director from './pages/About/Director';
@@ -18,9 +19,15 @@ import CodeOfConduct from './pages/Academics/CodeOfConduct';
 import AssessmentPage from './pages/Academics/AssessmentPage';
 import FeeStructure from './pages/Information/FeeStructure';
 import SchoolTiming from './pages/Information/SchoolTiming';
+import AdmissionCriteria from './pages/Information/AdmissionCriteria';
 import AnnualActivity from './pages/Activities/AnnualActivity';
 import WorkshopsOrientation from './pages/Activities/WorkshopsOrientation';
 import InfrastructurePage from './pages/Infrastructure/InfrastructurePage';
+import CurriculumPage from './pages/Infrastructure/CurriculumPage';
+import BeyondAcademicsPage from './pages/Infrastructure/BeyondAcademicsPage';
+import TransportationPage from './pages/Infrastructure/TransportationPage';
+import SportsYogaPage from './pages/Infrastructure/SportsYogaPage';
+import ClubsHouseSystemPage from './pages/Infrastructure/ClubsHouseSystemPage';
 import AdmissionPage from './pages/Admission/AdmissionPage';
 import ActivitiesPage from './pages/Activities/ActivitiesPage';
 import StudentTCPage from './pages/StudentTC/StudentTCPage';
@@ -43,6 +50,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about/journey" element={<Journey />} />
+          <Route path="/about/history" element={<History />} />
+          <Route path="/history" element={<History />} />
           <Route path="/about/vision-mission" element={<VisionMission />} />
           <Route path="/about/motto" element={<Motto />} />
           <Route path="/about/director" element={<Director />} />
@@ -59,6 +68,8 @@ export default function App() {
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/academics/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/information/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="/information/admission-criteria" element={<AdmissionCriteria />} />
+          <Route path="/admission-criteria" element={<AdmissionCriteria />} />
           <Route path="/fee-structure" element={<FeeStructure />} />
           <Route path="/information/fee-structure" element={<FeeStructure />} />
           <Route path="/school-timing" element={<SchoolTiming />} />
@@ -78,6 +89,18 @@ export default function App() {
           <Route path="/academics/assessment" element={<AssessmentPage />} />
           <Route path="/assessment" element={<AssessmentPage />} />
           <Route path="/infrastructure" element={<InfrastructurePage />} />
+          <Route path="/infrastructure/curriculum" element={<CurriculumPage />} />
+          <Route path="/curriculum" element={<CurriculumPage />} />
+          <Route path="/infrastructure/beyond-academics" element={<BeyondAcademicsPage />} />
+          <Route path="/beyond-academics" element={<BeyondAcademicsPage />} />
+          <Route path="/infrastructure/transportation" element={<TransportationPage />} />
+          <Route path="/transportation" element={<TransportationPage />} />
+          <Route path="/infrastructure/sports-yoga" element={<SportsYogaPage />} />
+          <Route path="/infrastructure/sports" element={<SportsYogaPage />} />
+          <Route path="/sports-yoga" element={<SportsYogaPage />} />
+          <Route path="/infrastructure/clubs-house-system" element={<ClubsHouseSystemPage />} />
+          <Route path="/infrastructure/clubs" element={<ClubsHouseSystemPage />} />
+          <Route path="/clubs-house-system" element={<ClubsHouseSystemPage />} />
           <Route path="/admission" element={<AdmissionPage />} />
           <Route path="/activities" element={<ActivitiesPage />} />
           <Route path="/student-tc" element={<StudentTCPage />} />

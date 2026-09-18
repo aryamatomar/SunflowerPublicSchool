@@ -1,7 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeader from '../../components/PageHeader';
-import { Building2, Monitor, BookOpen, ShieldCheck, Droplet, Users } from 'lucide-react';
+import { 
+  Building2, 
+  Monitor, 
+  BookOpen, 
+  ShieldCheck, 
+  Droplet, 
+  Bus, 
+  Trophy, 
+  Sparkles, 
+  GraduationCap, 
+  ChevronRight,
+  ArrowRight
+} from 'lucide-react';
 
 export default function InfrastructurePage() {
   const infraStats = [
@@ -13,15 +26,48 @@ export default function InfrastructurePage() {
     { label: "Boys Toilets", value: "14 Toilets" }
   ];
 
+  const infraSections = [
+    {
+      title: "Our Curriculum",
+      path: "/infrastructure/curriculum",
+      icon: GraduationCap,
+      desc: "Child-centric curriculum focusing on academics, practical learning, skill development, NEP 2020 & CBSE framework."
+    },
+    {
+      title: "Beyond Academics",
+      path: "/infrastructure/beyond-academics",
+      icon: Sparkles,
+      desc: "Individual attention, technology-enabled learning, cultural values, CCTV security & faculty development."
+    },
+    {
+      title: "Transportation",
+      path: "/infrastructure/transportation",
+      icon: Bus,
+      desc: "Supervised transit through vans with Lady Caretaker and mobile phone connectivity for utmost safety."
+    },
+    {
+      title: "Games, Sports & Yoga",
+      path: "/infrastructure/sports-yoga",
+      icon: Trophy,
+      desc: "‘A Healthy Mind In A Healthy Body’, qualified physical education teachers, team spirit & Student Cabinet."
+    },
+    {
+      title: "Clubs & House System",
+      path: "/infrastructure/clubs-house-system",
+      icon: BookOpen,
+      desc: "Inter-house competitions (Nehru, Shastri, Tagore, Gandhi), 12 specialized student clubs & digitalized classrooms."
+    }
+  ];
+
   return (
     <div className="bg-slate-50 min-h-screen pb-16">
       <Breadcrumb items={[{ label: 'Infrastructure' }]} />
       <PageHeader 
         title="Campus & Infrastructure" 
-        subtitle="Modern facilities, laboratories, library, playground & safety systems"
+        subtitle="Modern facilities, curriculum framework, transportation, sports, laboratories & safety systems"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 space-y-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 space-y-12">
         
         {/* Premises Overview */}
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
@@ -38,6 +84,41 @@ export default function InfrastructurePage() {
                 <span className="block text-slate-600 text-xs font-semibold">{stat.label}</span>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Infrastructure & Academic Pillars Quick Links */}
+        <div>
+          <h2 className="text-2xl font-bold text-[#10457B] mb-6 pb-2 border-b-2 border-[#E9931C] inline-block">
+            INFRASTRUCTURE & ACADEMIC SECTIONS
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {infraSections.map((sec, idx) => {
+              const IconComp = sec.icon;
+              return (
+                <Link
+                  key={idx}
+                  to={sec.path}
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-[#E9931C]/50 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-[#E9931C] mb-4 group-hover:bg-[#10457B] group-hover:text-white transition-colors">
+                      <IconComp className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#10457B] group-hover:text-[#E9931C] transition-colors mb-2">
+                      {sec.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                      {sec.desc}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#10457B] group-hover:text-[#E9931C] pt-2 border-t border-slate-100">
+                    <span>Explore Section</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FileText, Eye, Download, AlertCircle } from 'lucide-react';
 
-export default function DocumentCard({ title, docUrl }) {
+export default function DocumentCard({ title, docUrl, description }) {
   const isAvailable = Boolean(docUrl);
 
   return (
@@ -19,6 +19,12 @@ export default function DocumentCard({ title, docUrl }) {
         <h3 className="text-base sm:text-lg font-bold text-[#10457B] font-poppins mb-2 leading-snug">
           📄 {title}
         </h3>
+
+        {description && (
+          <p className="text-xs sm:text-sm text-slate-600 mb-3 font-medium">
+            {description}
+          </p>
+        )}
 
         <p className="text-xs text-slate-500 mb-6 leading-relaxed flex items-center gap-1.5">
           {isAvailable ? (
@@ -39,6 +45,7 @@ export default function DocumentCard({ title, docUrl }) {
               href={docUrl}
               target="_blank"
               rel="noreferrer"
+              aria-label={`View ${title}`}
               className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 bg-blue-50 hover:bg-[#10457B] text-[#10457B] hover:text-white text-xs font-bold rounded-xl transition-all duration-200"
             >
               <Eye className="w-3.5 h-3.5" />
@@ -47,13 +54,13 @@ export default function DocumentCard({ title, docUrl }) {
 
             <a
               href={docUrl}
-              download
               target="_blank"
               rel="noreferrer"
+              aria-label={`Download ${title} PDF`}
               className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 bg-[#E9931C] hover:bg-amber-600 text-white text-xs font-bold rounded-xl transition-all duration-200 shadow-xs"
             >
               <Download className="w-3.5 h-3.5" />
-              <span>Download</span>
+              <span>Download PDF</span>
             </a>
           </>
         ) : (

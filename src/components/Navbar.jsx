@@ -9,6 +9,7 @@ const NAV_MENU = [
     href: '/about/journey',
     dropdown: [
       { label: 'Our Journey', href: '/about/journey' },
+      { label: 'History of Sunflower', href: '/about/history' },
       { label: 'Vision & Mission', href: '/about/vision-mission' },
       { label: 'Motto', href: '/about/motto' },
       { label: 'School Management Committee (SMC)', href: '/about/smc' },
@@ -34,20 +35,31 @@ const NAV_MENU = [
       { label: 'Exam & Evaluation Pattern', href: '/academics/examination-pattern' },
       { label: 'Assessment', href: '/academics/assessment' },
       { label: 'Academics Overview', href: '/academics' },
+      { label: 'TC', href: '/student-tc' },
     ]
   },
   { 
     label: 'Information', 
     href: '/information',
     dropdown: [
+      { label: 'Admission Criteria', href: '/information/admission-criteria' },
       { label: 'School Timing', href: '/school-timing' },
       { label: 'Fee Structure 2026-27', href: '/fee-structure' },
-      { label: 'Code of Conduct', href: '/code-of-conduct' },
-      { label: 'Mandatory Disclosure', href: '/about/disclosure' },
     ]
   },
   { label: 'Mandatory Disclosure', href: '/about/disclosure' },
-  { label: 'Infrastructure', href: '/infrastructure' },
+  { 
+    label: 'Infrastructure', 
+    href: '/infrastructure',
+    dropdown: [
+      { label: 'Campus & Facilities', href: '/infrastructure' },
+      { label: 'Our Curriculum', href: '/infrastructure/curriculum' },
+      { label: 'Beyond Academics', href: '/infrastructure/beyond-academics' },
+      { label: 'Transportation', href: '/infrastructure/transportation' },
+      { label: 'Games, Sports & Yoga', href: '/infrastructure/sports-yoga' },
+      { label: 'Clubs & House System', href: '/infrastructure/clubs-house-system' },
+    ]
+  },
   { 
     label: 'Activities/Gallery', 
     href: '/activities',
@@ -55,10 +67,9 @@ const NAV_MENU = [
       { label: 'Workshops & Orientation', href: '/workshops-orientation' },
       { label: 'Annual Activity Calendar 2026-27', href: '/annual-activity' },
       { label: 'Activities & Event Gallery', href: '/activities' },
+      { label: 'Annual Function', href: '/annual-function-2025' },
     ]
   },
-  { label: 'Student TC', href: '/student-tc' },
-  { label: 'Annual Function 2025', href: '/annual-function-2025', badge: '2025' },
   { label: 'Contact', href: '/contact' },
 ];
 
