@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import PageHeader from '../../components/PageHeader';
 import DocumentCard from '../../components/DocumentCard';
-import { Building2, UserCheck, BarChart3, ShieldAlert, Search, Users, Phone, Mail } from 'lucide-react';
+import { Building2, UserCheck, BarChart3, Search, Users } from 'lucide-react';
 
 export default function Disclosure() {
   const [teacherSearch, setTeacherSearch] = useState('');
@@ -73,10 +73,7 @@ export default function Disclosure() {
   ];
 
   const filteredTeachers = teachersList.filter(t => 
-    t.name.toLowerCase().includes(teacherSearch.toLowerCase()) ||
-    t.designation.toLowerCase().includes(teacherSearch.toLowerCase()) ||
-    t.qualification.toLowerCase().includes(teacherSearch.toLowerCase()) ||
-    t.regNo.toLowerCase().includes(teacherSearch.toLowerCase())
+    t.name.toLowerCase().includes(teacherSearch.toLowerCase())
   );
 
   return (
@@ -172,14 +169,14 @@ export default function Disclosure() {
               </div>
             </div>
 
-            {/* Quick Filter Search */}
+              {/* Quick Filter Search */}
             <div className="relative max-w-xs w-full">
               <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={teacherSearch}
                 onChange={(e) => setTeacherSearch(e.target.value)}
-                placeholder="Search teacher by name or designation..."
+                placeholder="Search teacher by name..."
                 className="w-full pl-9 pr-4 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#E9931C] bg-slate-50 text-slate-800"
               />
             </div>
@@ -189,48 +186,20 @@ export default function Disclosure() {
             <table className="w-full text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="bg-[#10457B] text-white">
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Registration No</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Teacher ID</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Name</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Designation</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Date Of Joining</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Qualification</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Phone Number</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Date Of Birth</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">Gender</th>
-                  <th className="py-3.5 px-3 font-bold border-b border-slate-200 whitespace-nowrap">EMAIL</th>
+                  <th className="py-3.5 px-4 font-bold border-b border-slate-200 whitespace-nowrap">Teacher Name</th>
+                  <th className="py-3.5 px-4 font-bold border-b border-slate-200 whitespace-nowrap">Qualification</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 text-slate-800">
                 {filteredTeachers.map((teacher, idx) => (
-                  <tr key={teacher.regNo} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/70 hover:bg-amber-50/40'}>
-                    <td className="py-3 px-3 font-mono font-semibold text-slate-700 whitespace-nowrap">{teacher.regNo}</td>
-                    <td className="py-3 px-3 font-mono text-slate-600 whitespace-nowrap">{teacher.teacherId}</td>
-                    <td className="py-3 px-3 font-bold text-[#10457B] whitespace-nowrap">{teacher.name}</td>
-                    <td className="py-3 px-3 whitespace-nowrap">
-                      <span className="px-2 py-0.5 rounded-md font-bold text-xs bg-amber-50 text-[#0B3560] border border-amber-200/60">
-                        {teacher.designation}
-                      </span>
-                    </td>
-                    <td className="py-3 px-3 text-slate-600 whitespace-nowrap font-mono text-xs">{teacher.doj}</td>
-                    <td className="py-3 px-3 font-semibold text-slate-700 whitespace-nowrap">{teacher.qualification}</td>
-                    <td className="py-3 px-3 whitespace-nowrap">
-                      <a href={`tel:${teacher.phone}`} className="text-[#10457B] hover:text-[#E9931C] font-mono font-medium">
-                        {teacher.phone}
-                      </a>
-                    </td>
-                    <td className="py-3 px-3 text-slate-600 whitespace-nowrap font-mono text-xs">{teacher.dob}</td>
-                    <td className="py-3 px-3 font-bold text-slate-700 text-center whitespace-nowrap">{teacher.gender}</td>
-                    <td className="py-3 px-3 whitespace-nowrap">
-                      <a href={`mailto:${teacher.email}`} className="text-blue-600 hover:text-blue-800 hover:underline text-xs">
-                        {teacher.email}
-                      </a>
-                    </td>
+                  <tr key={teacher.regNo || idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/70 hover:bg-amber-50/40'}>
+                    <td className="py-3.5 px-4 font-bold text-[#10457B] whitespace-nowrap">{teacher.name}</td>
+                    <td className="py-3.5 px-4 font-semibold text-slate-700 whitespace-nowrap">{teacher.qualification}</td>
                   </tr>
                 ))}
                 {filteredTeachers.length === 0 && (
                   <tr>
-                    <td colSpan={10} className="py-8 text-center text-slate-500 font-semibold">
+                    <td colSpan={2} className="py-8 text-center text-slate-500 font-semibold">
                       No teacher records found matching "{teacherSearch}".
                     </td>
                   </tr>
