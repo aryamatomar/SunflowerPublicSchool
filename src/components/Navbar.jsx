@@ -49,7 +49,16 @@ const NAV_MENU = [
       { label: 'Fee Structure 2026-27', href: '/fee-structure' },
     ]
   },
-  { label: 'Mandatory Disclosure', href: '/about/disclosure' },
+  { 
+    label: 'Mandatory Disclosure', 
+    href: '/about/disclosure',
+    dropdown: [
+      { label: 'Mandatory Disclosure', href: '/about/disclosure' },
+      { label: 'CBSE', href: 'https://www.cbse.gov.in/' },
+      { label: 'Eco Mission for Life', href: 'https://ecoclubs.education.gov.in/' },
+      { label: 'SHVR Login', href: 'https://shvr.education.gov.in/account/login' },
+    ]
+  },
   { 
     label: 'Infrastructure', 
     href: '/infrastructure',
@@ -140,19 +149,32 @@ export default function Navbar() {
                   {/* Desktop Dropdown Menu */}
                   {item.dropdown && openDropdown === item.label && (
                     <div className="absolute top-full left-0 w-72 bg-white rounded-xl shadow-2xl py-2 border border-gray-100 animate-fade-in z-50 mt-1">
-                      {item.dropdown.map((sub) => (
-                        <Link
-                          key={sub.label}
-                          to={sub.href}
-                          className={`block px-4 py-2.5 text-xs font-semibold transition-colors ${
-                            location.pathname === sub.href
-                              ? 'bg-blue-50 text-[#10457B] font-bold border-l-4 border-[#E9931C]'
-                              : 'text-gray-700 hover:bg-amber-50/70 hover:text-[#10457B]'
-                          }`}
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
+                      {item.dropdown.map((sub) => {
+                        const isExternal = sub.href.startsWith('http');
+                        return isExternal ? (
+                          <a
+                            key={sub.label}
+                            href={sub.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2.5 text-xs font-semibold transition-colors text-gray-700 hover:bg-amber-50/70 hover:text-[#10457B]"
+                          >
+                            {sub.label}
+                          </a>
+                        ) : (
+                          <Link
+                            key={sub.label}
+                            to={sub.href}
+                            className={`block px-4 py-2.5 text-xs font-semibold transition-colors ${
+                              location.pathname === sub.href
+                                ? 'bg-blue-50 text-[#10457B] font-bold border-l-4 border-[#E9931C]'
+                                : 'text-gray-700 hover:bg-amber-50/70 hover:text-[#10457B]'
+                            }`}
+                          >
+                            {sub.label}
+                          </Link>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -207,20 +229,34 @@ export default function Navbar() {
               {/* Mobile Submenu Dropdown */}
               {item.dropdown && openDropdown === item.label && (
                 <div className="pl-6 space-y-1 py-1 bg-blue-950/40 rounded-lg">
-                  {item.dropdown.map((sub) => (
-                    <Link
-                      key={sub.label}
-                      to={sub.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`block px-4 py-2 text-xs font-semibold rounded-md transition-colors ${
-                        location.pathname === sub.href
-                          ? 'text-[#E9931C] font-bold bg-blue-900/50'
-                          : 'text-blue-200 hover:text-white'
-                      }`}
-                    >
-                      • {sub.label}
-                    </Link>
-                  ))}
+                  {item.dropdown.map((sub) => {
+                    const isExternal = sub.href.startsWith('http');
+                    return isExternal ? (
+                      <a
+                        key={sub.label}
+                        href={sub.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-4 py-2 text-xs font-semibold rounded-md transition-colors text-blue-200 hover:text-white"
+                      >
+                        • {sub.label}
+                      </a>
+                    ) : (
+                      <Link
+                        key={sub.label}
+                        to={sub.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`block px-4 py-2 text-xs font-semibold rounded-md transition-colors ${
+                          location.pathname === sub.href
+                            ? 'text-[#E9931C] font-bold bg-blue-900/50'
+                            : 'text-blue-200 hover:text-white'
+                        }`}
+                      >
+                        • {sub.label}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>
